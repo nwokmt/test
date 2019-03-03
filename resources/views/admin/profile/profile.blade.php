@@ -40,7 +40,7 @@
                              <div class="col-md-8">
 <!------ img ------>
 <label class="verify_person__formbox__item_profile-img-upload" id="photo_frame1">
-<input type="file" accept="image/*" id="fileData1" class="fileData">
+<input type="file" accept="image/*" class="fileData">
 <div id="description1">
 			@if (old('image'))
 <img src="{{ old('image') }}" id="image_thum" width="150">
@@ -73,7 +73,7 @@
 <div class="modal_window">
 <h2>切り取り</h2>
 <a href="javascript:void(0);" id="btnCrop"  class="modal-close"> 切り取る</a>　<a href="#">閉じる</a><br>
-<img src="./img/noimg.png" id="jcrop_target">
+<img src="/img/noimg.png" id="jcrop_target">
 <!- サムネイル ->
 <div class="inline-labels" style="display:none;">
 <img id="thumb">
