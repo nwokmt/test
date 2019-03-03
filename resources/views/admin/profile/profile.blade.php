@@ -38,8 +38,6 @@
                          <div class="form-group row">
                              <label class="col-md-2" for="image">画像</label>
                              <div class="col-md-8">
-                                 <input type="file" class="form-control-file" name="image">
-
 <!------ img ------>
 <label class="verify_person__formbox__item_profile-img-upload" id="photo_frame1">
 <input type="file" accept="image/*" id="fileData1" class="fileData">
@@ -49,7 +47,7 @@
             @else
 <img src="/img/noimg.png" id="image_thum" width="150">
 			@endif
-<input type="hidden" name="image_src" id="image_src" value="{{ old('image') }}">
+<input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
 </div>
 </label>
 <!------ img ------>
