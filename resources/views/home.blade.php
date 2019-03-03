@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <a href="/admin/profile/front">プロフィール</a>
                 </div>
             </div>
         </div>
