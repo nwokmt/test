@@ -1,4 +1,3 @@
-var fileId="";
 //var JCropper;
 var JcropAPI = null;
 var _IMG_SELECTORN_NAME = '#jcrop_target';
@@ -9,7 +8,6 @@ $(window).load(function(){
     //画像ファイルを変更
     $(document).on("change", '.fileData', function (data){
         document.body.style.cursor = 'wait';
-        fileId = $(this).context.id.replace( 'fileData', '');
         var reader = new FileReader();
         reader.onload = function(e) {
             _IMG_PHOTO = new Image(); //イメージオブジェクト生成
