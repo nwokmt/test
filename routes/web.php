@@ -18,10 +18,10 @@ Route::get('signup/create', 'Admin\SignupController@add');
 Route::post('signup/create', 'Admin\SignupController@create');
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add');
-    Route::get('admin/front', 'Admin\ProfileController@front')->name('front')->middleware('auth');
-    Route::get('admin/profile', 'Admin\ProfileController@add')->name('profile')->middleware('auth');
-    Route::post('admin/profile', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
+    Route::get('profile/front', 'Admin\ProfileController@front')->name('front')->middleware('auth');
+    Route::get('profile/edit', 'Admin\ProfileController@add')->name('profile')->middleware('auth');
+    Route::post('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
 });
 Auth::routes();
 
