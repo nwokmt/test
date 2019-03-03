@@ -39,8 +39,6 @@ class ProfileController extends Controller
 
     public function front(Request $request)
    {
-echo "OK";
-return;	
 	$id = Auth::id();
 	$profiles = Profile::find($request->user_id = $id);
 
