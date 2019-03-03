@@ -25,6 +25,13 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         {{-- この章の後半で作成するCSSを読み込みます --}}
         <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+
+<script src="/js/jquery-2.2.0.js"></script>
+<script src="/js/jquery.Jcrop.js"></script>
+<script src="/js/Jcrop.js"></script>
+<script src="/js/rotate.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/Jcrop.css"/>
+
     </head>
     <body>
         <div id="app">
@@ -85,5 +92,33 @@
                 @yield('content')
             </main>
         </div>
+
+<div id="modal">
+ 
+<div id="open01">
+<a href="#" class="close_overlay">×</a>
+<div class="modal_window">
+<h2>切り取り</h2>
+<a href="javascript:void(0);" id="btnCrop"  class="modal-close"> 切り取る</a>　<a href="#">閉じる</a><br>
+<img src="./img/noimg.png" id="jcrop_target">
+<!- サムネイル ->
+<div class="inline-labels" style="display:none;">
+<img id="thumb">
+<br>
+    <label>X1 <input type="text" size="4" id="x1" name="x1" /></label>
+    <label>Y1 <input type="text" size="4" id="y1" name="y1" /></label>
+    <label>X2 <input type="text" size="4" id="x2" name="x2" /></label>
+    <label>Y2 <input type="text" size="4" id="y2" name="y2" /></label>
+    <label>W <input type="text" size="4" id="w" name="w" /></label>
+    <label>H <input type="text" size="4" id="h" name="h" /></label>
+</div><!-- display:none -->
+</div>
+<br>
+</div><!--/.modal_window-->
+</div><!--/#open01-->
+
+</div><!--/#modal-->
+
+
     </body>
 </html>
