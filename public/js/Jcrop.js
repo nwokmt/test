@@ -37,11 +37,11 @@ $(window).load(function(){
             	};
             };
         }
-        //reader.readAsDataURL($(this).context.files[0]);
-        //if($(this).context.hasOwnProperty("files")){
-        //        $(this).context.files = [];
-        //}
-        //$('#' + $(this).context.id).val('');
+        reader.readAsDataURL($(this).context.files[0]);
+        if($(this).context.hasOwnProperty("files")){
+                $(this).context.files = [];
+        }
+        $('#' + $(this).context.id).val('');
     });
     //クリッピングボタンクリック
     $('#btnCrop').click(function() {

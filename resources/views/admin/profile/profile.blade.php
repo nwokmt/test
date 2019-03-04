@@ -1,11 +1,10 @@
 @extends('layouts.app')
+@section('content')
 <script src="/js/jquery-2.2.0.js"></script>
 <script src="/js/jquery.Jcrop.js"></script>
 <script src="/js/Jcrop.js"></script>
 <script src="/js/rotate.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/Jcrop.css"/>
-
-@section('content')
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
