@@ -18,7 +18,6 @@
 				<img src="{{ ($profiles->image) }}">
 			@endif
                   <h2>{{ ($profiles->name) }}</h2>
-                  <p>{{ ("メールアドレス：" . $profiles->email) }}</p>
 		  <p>{{ ($profiles->introduction) }}</p>
 		</div>
 	          <div class="row justify-content-center">

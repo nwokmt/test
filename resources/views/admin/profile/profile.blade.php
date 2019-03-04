@@ -30,14 +30,7 @@
                           <div class="form-group row">
                               <label class="col-md-2" for="introduction">自己紹介欄</label>
                               <div class="col-md-9">
-                                <textarea class="form-control" name="introduction" rows="8">
-@if (empty($profiles))
-                                    {{ old('introduction') }}
-@else
-                                    {{ old('introduction',$profiles->introduction) }}
-@endif
-                                </textarea>
-                                  {{ old('introduction',$profiles->introduction) }}
+                                <textarea class="form-control" name="introduction" rows="8">@if (empty($profiles)){{ old('introduction') }}@else{{ old('introduction',$profiles->introduction) }}@endif</textarea>
                               </div>
                          </div>
                          <div class="form-group row">
@@ -50,13 +43,21 @@
 			@if (old('image'))
 @if (empty($profiles))
                 <img src="{{ old('image') }}" id="image_thum" width="150">
+                <input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
 @else
                 <img src="{{ old('image',$profiles->image) }}" id="image_thum" width="150">
+                <input type="hidden" name="image" id="image_src" value="{{ old('image',$profiles->image) }}">
 @endif
             @else
-<img src="/img/noimg.png" id="image_thum" width="150">
+
+@if (empty($profiles))
+                <img src="/img/noimg.png" id="image_thum" width="150">
+                <input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
+@else
+                <img src="{{ $profiles->image }}" id="image_thum" width="150">
+                <input type="hidden" name="image" id="image_src" value="{{ old('image',$profiles->image) }}">
+@endif
 			@endif
-<input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
 </div>
 </label>
 <!------ img ------>
