@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
     	$id = Auth::id();
-    	$profiles = where('user_id',$id)->first();
+    	$profiles = Profile::find($id);
         return view('home',['profiles' => $profiles]);
     }
 }

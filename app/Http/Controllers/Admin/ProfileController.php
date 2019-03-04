@@ -13,7 +13,7 @@ class ProfileController extends Controller
     public function add()
     {
     	$id = Auth::id();
-    	$profiles = where('user_id',$id)->first();
+    	$profiles = Profile::find($id);
         return view('admin.profile.profile', ['profiles' => $profiles]);
     }
 
@@ -25,6 +25,7 @@ class ProfileController extends Controller
  
         unset($form['_token']);
 
+        $form['id'] = Auth::id();
         $profiles->fill($form)->save();
         
         return redirect('admin/profile');
