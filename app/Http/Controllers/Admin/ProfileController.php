@@ -20,14 +20,10 @@ class ProfileController extends Controller
         $this->validate($request, Profile::$rules);
         $profiles = new Profile;
         $form = $request->all();
-print_r($form);
-exit;
  
         unset($form['_token']);
-        unset($form['image']);
 
-        $profiles->fill($form);
-        $profiles->save();
+        $profiles->fill($form)->save();
         
         return redirect('admin/profile');
     }
