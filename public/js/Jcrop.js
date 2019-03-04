@@ -1,4 +1,5 @@
 //var JCropper;
+jQuery.noConflict();
 var JcropAPI = null;
 var _IMG_SELECTORN_NAME = '#jcrop_target';
 var _IMG_PHOTO = new Image();
