@@ -13,7 +13,7 @@ class ProfileController extends Controller
     public function add()
     {
     	$id = Auth::id();
-    	$profiles = Profile::find($request->user_id = $id);
+    	$profiles = where('user_id',$id)->first();
         return view('admin.profile.profile', ['profiles' => $profiles]);
     }
 
