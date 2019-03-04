@@ -4,14 +4,14 @@ var _IMG_SELECTORN_NAME = '#jcrop_target';
 var _IMG_PHOTO = new Image();
 var _IMG_PHOTO_NEW = new Image();
         
-$(window).load(function(){
+jQuery(window).load(function(){
     //画像ファイルを変更
-    $(document).on("change", '.fileData', function (data){
+    jQuery(document).on("change", '.fileData', function (data){
         document.body.style.cursor = 'wait';
         var reader = new FileReader();
         reader.onload = function(e) {
             _IMG_PHOTO = new Image(); //イメージオブジェクト生成
-            //$(_IMG_SELECTORN_NAME).attr("src",reader.result);
+            //jQuery(_IMG_SELECTORN_NAME).attr("src",reader.result);
 
             _IMG_PHOTO.src = reader.result;
             _IMG_PHOTO.onload = function() {
@@ -26,7 +26,7 @@ $(window).load(function(){
                 _TW = _IMG_PHOTO.naturalWidth;
                 _TH = _IMG_PHOTO.naturalHeight;
                 var imgNew = rotate(_IMG_PHOTO,_TW,_TH,orientation);
-                $(_IMG_SELECTORN_NAME).attr("src",imgNew);
+                jQuery(_IMG_SELECTORN_NAME).attr("src",imgNew);
             	_IMG_PHOTO_NEW = new Image(); //イメージオブジェクト生成
             	_IMG_PHOTO_NEW.src = imgNew;
 	        _IMG_PHOTO_NEW.onload = function() {
@@ -37,21 +37,21 @@ $(window).load(function(){
             	};
             };
         }
-        reader.readAsDataURL($(this).context.files[0]);
-        if($(this).context.hasOwnProperty("files")){
-                $(this).context.files = [];
+        reader.readAsDataURL(jQuery(this).context.files[0]);
+        if(jQuery(this).context.hasOwnProperty("files")){
+                jQuery(this).context.files = [];
         }
-        $('#' + $(this).context.id).val('');
+        jQuery('#' + jQuery(this).context.id).val('');
     });
     //クリッピングボタンクリック
-    $('#btnCrop').click(function() {
-        if($("#w").val()==""){
+    jQuery('#btnCrop').click(function() {
+        if(jQuery("#w").val()==""){
             alert("切り取り範囲を選択してください。");
             return false;
         }
         var img = getDataURL();
-        $("#image_thum").attr("src",img);
-        $("#image_src").val(img);
+        jQuery("#image_thum").attr("src",img);
+        jQuery("#image_src").val(img);
         location.href="#";
     });
 } );
@@ -59,9 +59,9 @@ $(window).load(function(){
 var boundx, boundy;
 function editTrimmingImage(tw, th) {
     var s = fixImageSize(tw, th);
-    $(_IMG_SELECTORN_NAME).width(s.maxWidth);
-    $(_IMG_SELECTORN_NAME).height(s.maxHeight);
-    $("#jcrop_target").Jcrop({
+    jQuery(_IMG_SELECTORN_NAME).width(s.maxWidth);
+    jQuery(_IMG_SELECTORN_NAME).height(s.maxHeight);
+    jQuery("#jcrop_target").Jcrop({
         onChange: updatePreview,
         onSelect:   showCoords,
         onRelease:  clearCoords,
@@ -71,7 +71,7 @@ function editTrimmingImage(tw, th) {
         aspectRatio: 1
     },function(){
 	//JCropper = this;
-	JcropAPI = $(_IMG_SELECTORN_NAME).data('Jcrop');
+	JcropAPI = jQuery(_IMG_SELECTORN_NAME).data('Jcrop');
         var bounds = this.getBounds();
         boundx = bounds[0];
         boundy = bounds[1];
@@ -79,44 +79,44 @@ function editTrimmingImage(tw, th) {
 }
 
 function checkCoords() {
-    if(parseInt($("#w").val())) return true;
+    if(parseInt(jQuery("#w").val())) return true;
     return false;
 }
 
 function showCoords(c)
 {
-    $('#x1').val(c.x);
-    $('#y1').val(c.y);
-    $('#x2').val(c.x2);
-    $('#y2').val(c.y2);
-    $('#w').val(c.w);
-    $('#h').val(c.h);
+    jQuery('#x1').val(c.x);
+    jQuery('#y1').val(c.y);
+    jQuery('#x2').val(c.x2);
+    jQuery('#y2').val(c.y2);
+    jQuery('#w').val(c.w);
+    jQuery('#h').val(c.h);
     
     updatePreview(c);
 };
 
   function clearCoords()
   {
-    $('#x1').val("");
-    $('#y1').val("");
-    $('#x2').val("");
-    $('#y2').val("");
-    $('#w').val("");
-    $('#h').val("");
+    jQuery('#x1').val("");
+    jQuery('#y1').val("");
+    jQuery('#x2').val("");
+    jQuery('#y2').val("");
+    jQuery('#w').val("");
+    jQuery('#h').val("");
   };
 
 
 function updatePreview(c) {
     if (parseInt(c.w) > 0)
     {
-        var cW = $("photo_viewer").width();
-        var vH = $("photo_viewer").height();
+        var cW = jQuery("photo_viewer").width();
+        var vH = jQuery("photo_viewer").height();
  
         
         var rx = cW / c.w;
         var ry = vH / c.h;
 
-        $("#preview").css({
+        jQuery("#preview").css({
             width: Math.round(rx * boundx) + 'px',
             height: Math.round(ry * boundy) + 'px',
             marginLeft: '-' + Math.round(rx * c.x) + 'px',
@@ -133,10 +133,10 @@ function getDataURL(){
             var height = _IMG_BOX_WIDTH;
             var canvas = document.createElement("canvas");
                // canvas.clearRect(width, height);
-            var w = parseInt($('#w').val());
-            var h = parseInt($('#h').val());
-            var x1 = parseInt($('#x1').val());
-            var y1 = parseInt($('#y1').val());
+            var w = parseInt(jQuery('#w').val());
+            var h = parseInt(jQuery('#h').val());
+            var x1 = parseInt(jQuery('#x1').val());
+            var y1 = parseInt(jQuery('#y1').val());
             var dx = 0 - parseInt(w)/2 + width/2;
             var dy = 0 - parseInt(h)/2 + height/2;
             var dw = width;
@@ -151,6 +151,6 @@ function getDataURL(){
 
             context.drawImage(_IMG_PHOTO_NEW, sx, sy, sw, sh, 0, 0, dw, dh);
             var img_png_src = canvas.toDataURL();
-            $("#thumb").attr("src",img_png_src);
+            jQuery("#thumb").attr("src",img_png_src);
             return img_png_src;
 }

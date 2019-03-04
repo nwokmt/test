@@ -14,6 +14,15 @@
 
         <!-- Scripts -->
         {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
+<script src="/js/jquery-2.2.0.js"></script>
+<script>
+jQuery.noConflict();
+</script>
+<script src="/js/jquery.Jcrop.js"></script>
+<script src="/js/Jcrop.js"></script>
+<script src="/js/rotate.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/Jcrop.css"/>
+
         <script src="{{ asset('js/app.js') }}" defer></script>
 
         <!-- Fonts -->
@@ -28,9 +37,7 @@
 
 <script src="/js/jquery-2.2.0.js"></script>
 <script src="/js/jquery.Jcrop.js"></script>
-<script src="/js/Jcrop.js"></script>
 <script src="/js/rotate.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/Jcrop.css"/>
 
     </head>
     <body>
