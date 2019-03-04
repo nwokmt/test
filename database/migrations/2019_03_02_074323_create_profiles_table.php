@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration
             	$table->text('introduction')->nullable();
             	$table->text('image')->nullable();
             	$table->timestamp('created_at')->nullable();
+                $table->timestamp('updated_at')->nullable();
             });
     }
 

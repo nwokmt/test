@@ -20,6 +20,7 @@ class CreateItemsTable extends Migration
         	$table->text('description')->nullable();
         	$table->text('image')->nullable();
         	$table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });	
     }
     /**
