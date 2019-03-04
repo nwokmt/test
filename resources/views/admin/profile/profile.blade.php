@@ -20,13 +20,24 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">名前</label>
                               <div class="col-md-6">
+@if (empty($profiles))
                               <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+@else
+                              <input type="text" class="form-control" name="name" value="{{ old('name',$profiles->name) }}">
+@endif
                           </div>
                       </div>
                           <div class="form-group row">
                               <label class="col-md-2" for="introduction">自己紹介欄</label>
                               <div class="col-md-9">
-                                  <textarea class="form-control" name="introduction" rows="8">{{ old('introduction') }}</textarea>
+                                <textarea class="form-control" name="introduction" rows="8">
+@if (empty($profiles))
+                                    {{ old('introduction') }}
+@else
+                                    {{ old('introduction',$profiles->introduction) }}
+@endif
+                                </textarea>
+                                  {{ old('introduction',$profiles->introduction) }}
                               </div>
                          </div>
                          <div class="form-group row">
@@ -37,7 +48,11 @@
 <input type="file" accept="image/*" class="fileData">
 <div id="description1">
 			@if (old('image'))
-<img src="{{ old('image') }}" id="image_thum" width="150">
+@if (empty($profiles))
+                <img src="{{ old('image') }}" id="image_thum" width="150">
+@else
+                <img src="{{ old('image',$profiles->image) }}" id="image_thum" width="150">
+@endif
             @else
 <img src="/img/noimg.png" id="image_thum" width="150">
 			@endif

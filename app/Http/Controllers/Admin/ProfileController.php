@@ -12,7 +12,9 @@ class ProfileController extends Controller
 {
     public function add()
     {
-        return view('admin.profile.profile');
+    	$id = Auth::id();
+    	$profiles = Profile::find($request->user_id = $id);
+        return view('admin.profile.profile', ['profiles' => $profiles]);
     }
 
     public function edit(Request $request)

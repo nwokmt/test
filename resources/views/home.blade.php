@@ -14,7 +14,10 @@
                         </div>
                     @endif
 
-                    <a href="/admin/profile/front">プロフィール</a>
+                    @if (!empty($profiles))
+                    <a href="/admin/profile">[プロフィール確認]</a>
+                    @endif
+                    <a href="/admin/profile/edit">[プロフィール編集]</a>
                 </div>
             </div>
         </div>
