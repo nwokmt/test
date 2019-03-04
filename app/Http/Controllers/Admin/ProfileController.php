@@ -22,11 +22,11 @@ class ProfileController extends Controller
         $this->validate($request, Profile::$rules);
         $profiles = new Profile;
         $form = $request->all();
- 
         unset($form['_token']);
 
-        $form['id'] = Auth::id();
-        $profiles->fill($form)->save();
+        $profiles = Profile::firstOrNew(['id' => Auth::id()]);
+        $profiles->fill($form);
+        $profiles->save();
         
         return redirect('admin/profile');
     }
