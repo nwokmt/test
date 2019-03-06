@@ -25,27 +25,29 @@ class ItemController extends Controller
 
     public function save(Request $request)
     {
-print_r($request->all());
-exit;
         $this->validate($request, Item::$rules);
         $item = new Item;
         $form = $request->all();
         unset($form['_token']);
 
-        $item = Item::firstOrNew(['id' => Auth::id()]);
+        if(isset($form["id"]) && !empty($form["id"])){
+            $item = Item::firstOrNew(['id' => $form["id"]]);
+        }
         $item->fill($form);
         $item->save();
         
         return redirect('admin/item');
     }
 
-    public function front(Request $request)
+    public function list()
    {
-print_r($request->all());
-exit;
-	$id = Auth::id();
-	$item = Item::find($request->user_id = $id);
+        $items = Item::all();
+        return view('admin.item.list', ['items' => $items]);
+     }
 
+    public function detail($id)
+   {
+	$item = Item::find($id);
 	return view('admin.item.detail', ['item' => $item]);
 
      }

@@ -3,7 +3,45 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>商品編集</h1>
+                <h1>商品一覧</h1>
+
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th width="10%">場所</th>
+                                <th width="10%">店名</th>
+                                <th width="30%">コメント</th>
+				<th width="10%"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach($items as $item)
+                                <tr>
+@if(empty($item->image))
+                                <img src="/img/noimg.png" id="image_thum" width="150">
+@else
+                                  <img src="{{ $item->image }}" id="image_thum" width="150">
+@endif
+                                    <td>{{ ($item->name) }}</td>
+                                    <td>{{  ($item->price) }}円</td>
+                                    <td>{{ str_limit($item->description) }}</td>
+				    <td align="center">
+ 					<a class="btn btn-primary" href="{{ action('Admin\ItemController@detail', ['id' => $item->id]) }}">詳細</a>
+                                        
+                                    </td>
+                                </tr>
+                             @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
                 <form action="{{ action('Admin\ItemController@save') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
@@ -32,7 +70,7 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">金額</label>
                               <div class="col-md-6">
-                              <input type="number" style="width:80%;display:inline" class="form-control" name="price" value="{{ old('name',$item->price) }}">円
+                              <input type="number" class="form-control" name="price" value="{{ old('name',$item->price) }}">円
                           </div>
                       </div>
                           <div class="form-group row">
