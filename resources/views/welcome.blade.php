@@ -91,8 +91,8 @@
             @endif
 
             <div class="content">
-                <div class="row" style="width:100%;margin-top:200px;position: absolute;">
-                <div class="title m-b-md">
+                <div class="row">
+                <div class="title m-b-md" style="margin-top:200px;position: absolute;">
                     Private☆Gallery
                 </div>
                 </div>
