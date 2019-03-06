@@ -10,15 +10,20 @@ use Illuminate\Support\facades\Auth;
 
 class ItemController extends Controller
 {
-    public function add($id)
+
+    public function add()
     {
-print_r($id);
-exit;
+        $item = new Item;
+        return view('admin.item.form', ['item' => $item]);
+    }
+
+    public function edit($id)
+    {
     	$item = Item::find($id);
         return view('admin.item.form', ['item' => $item]);
     }
 
-    public function edit(Request $request)
+    public function save(Request $request)
     {
 print_r($request->all());
 exit;

@@ -20,8 +20,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
     Route::get('item', 'Admin\ItemController@list')->name('item')->middleware('auth');
     Route::get('item/detail/{id}', ['as' => 'detail', 'uses' => 'Admin\ItemController@detail'])->where(['id'=>'[0-9]+'])->middleware('auth');
-    Route::get('item/edit/{id}', ['as' => 'add', 'uses' => 'Admin\ItemController@add'])->where(['id'=>'[0-9]+'])->middleware('auth');
-    Route::post('item/edit', ['as' => 'edit', 'uses' => 'Admin\ItemController@edit'])->middleware('auth');
+    Route::get('item/add', ['as' => 'add', 'uses' => 'Admin\ItemController@add'])->middleware('auth');
+    Route::get('item/edit/{id}', ['as' => 'edit', 'uses' => 'Admin\ItemController@edit'])->where(['id'=>'[0-9]+'])->middleware('auth');
+    Route::post('item/save', ['as' => 'save', 'uses' => 'Admin\ItemController@save'])->middleware('auth');
 });
 
 Auth::routes();
