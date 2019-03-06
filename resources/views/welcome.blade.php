@@ -61,6 +61,9 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .item {
+              float: left;
+            }
         </style>
     </head>
     <body>
@@ -68,7 +71,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">ADMIN</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -81,17 +84,34 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    PrivateGallery
+                    Private☆Gallery
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="row">
+<div class="container">
+                             @foreach($items as $item)
+<div class="item">
+<p>
+@if(empty($item->image))
+                                <img src="/img/noimg.png" id="image_thum" width="150">
+@else
+                                  <img src="{{ $item->image }}" id="image_thum" width="150">
+@endif
+</p>
+                                    <div>{{ ($item->name) }}</div>
+                                    <div>{{ ($item->price) }}円</div>
+                                    <div>{{ ($item->description)}}</div>
+</div><!-- item -->
+                             @endforeach
+</div><!-- container -->
                 </div>
+            </div>
+        </div>
+    </div>
+
             </div>
         </div>
     </body>

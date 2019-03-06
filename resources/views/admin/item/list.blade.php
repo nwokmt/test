@@ -36,8 +36,8 @@
 @endif
 </td>
                                     <td>{{ ($item->name) }}</td>
-                                    <td>{{  ($item->price) }}円</td>
-                                    <td>{{ str_limit($item->description) }}</td>
+                                    <td>{{ ($item->price) }}円</td>
+                                    <td>{{ ($item->description) }}</td>
 				    <td align="center">
  					<a class="btn btn-primary" href="{{ action('Admin\ItemController@detail', ['id' => $item->id]) }}">詳細</a>
                                         
