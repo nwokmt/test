@@ -66,6 +66,16 @@
               width: 180px;
               margin: 10px;
             }
+            .container {
+              /* この要素はflexコンテナとなり、子要素は自動的にflexアイテムとなる */
+              display: flex;
+
+              /* 横並びに表示する */
+              flex-direction: row;
+
+              /* 画面幅に収まらない場合は折り返す */
+              flex-wrap: wrap;
+            }
         </style>
     </head>
     <body>

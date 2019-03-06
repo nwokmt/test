@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="col-md-8 offset-md-4">
                                 @if (Route::has('register'))
-                                <a href="{{ route('register') }}">ìoò^ÇÕÇ±ÇøÇÁÇ©ÇÁ</a>
+                                <a href="{{ route('register') }}">ÁôªÈå≤„ÅØ„Åì„Å°„Çâ„Åã„Çâ</a>
                                 @endif
                                 </div>
                             </div>
