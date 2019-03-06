@@ -63,6 +63,8 @@
             }
             .item {
               float: left;
+              width: 180px;
+              margin: 10px;
             }
         </style>
     </head>
@@ -99,7 +101,7 @@
 </p>
                                     <div>{{ ($item->name) }}</div>
                                     <div>{{ ($item->price) }}円</div>
-                                    <div>{{ ($item->description)}}</div>
+                                    <div style="text-align:left">{{ ($item->description)}}</div>
 </div><!-- item -->
                              @endforeach
 </div><!-- container -->
