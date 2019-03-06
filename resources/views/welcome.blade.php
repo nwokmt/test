@@ -90,11 +90,12 @@
                 </div>
             @endif
 
-            <div class="content" style="width:100%;margin-top:200px;position: absolute;">
+            <div class="content">
+                <div class="row" style="width:100%;margin-top:200px;position: absolute;">
                 <div class="title m-b-md">
                     Private☆Gallery
                 </div>
-
+                </div>
 
         <div class="row" style="margin-top:300px;">
             <div class="col-md-12 mx-auto">
