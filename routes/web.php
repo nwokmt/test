@@ -10,10 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'TopController@index')->name('top');
 Route::group(['prefix' => 'admin'], function() {
     Route::get('profile', 'Admin\ProfileController@front')->name('front')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@add')->name('profile')->middleware('auth');
