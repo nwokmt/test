@@ -11,7 +11,11 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th colspan=5 align=right><a class="btn btn-primary" href="{{ action('Admin\ItemController@add') }}">新規作成</a></th>
+                                <th><br></th>
+                                <th><br></th>
+                                <th><br></th>
+                                <th><br></th>
+                                <th><a class="btn btn-primary" href="{{ action('Admin\ItemController@add') }}">新規作成</a></th>
                             </tr>
                             <tr>
                                 <th width="20%">画像</th>
