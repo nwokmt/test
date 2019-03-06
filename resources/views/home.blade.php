@@ -18,6 +18,9 @@
                     <a href="/admin/profile">[プロフィール確認]</a>
                     @endif
                     <a href="/admin/profile/edit">[プロフィール編集]</a>
+<br>
+                    <a href="/admin/item">[商品一覧]</a>
+
                 </div>
             </div>
         </div>

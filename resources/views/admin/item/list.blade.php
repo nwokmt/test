@@ -11,9 +11,10 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th width="10%">場所</th>
-                                <th width="10%">店名</th>
-                                <th width="30%">コメント</th>
+                                <th width="20%">画像</th>
+                                <th width="20%">商品名</th>
+                                <th width="10%">金額</th>
+                                <th width="40%">説明</th>
 				<th width="10%"></th>
                             </tr>
                         </thead>
