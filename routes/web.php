@@ -14,19 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('signup/create', 'Admin\SignupController@add');
-Route::post('signup/create', 'Admin\SignupController@create');
-
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
     Route::get('profile', 'Admin\ProfileController@front')->name('front')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@add')->name('profile')->middleware('auth');
     Route::post('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::get('item', 'Admin\ItemController@list')->name('item')->middleware('auth');
+    Route::get('item/detail/{id}', ['as' => 'detail', 'uses' => 'Admin\ItemController@detail'])->where(['id'=>'[0-9]+'])->middleware('auth');
+    Route::get('item/edit/{id}', ['as' => 'add', 'uses' => 'Admin\ItemController@add'])->where(['id'=>'[0-9]+'])->middleware('auth');
+    Route::post('item/edit', ['as' => 'edit', 'uses' => 'Admin\ItemController@edit'])->middleware('auth');
 });
-Auth::routes();
 
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
-});
