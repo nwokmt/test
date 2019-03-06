@@ -41,7 +41,7 @@ class ItemController extends Controller
 
     public function list()
    {
-        $items = Item::all()->orderBy('updated_at',"desc");
+        $items = Item::orderBy('updated_at',"desc")->get();
         return view('admin.item.list', ['items' => $items]);
      }
 
