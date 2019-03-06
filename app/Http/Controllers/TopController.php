@@ -7,6 +7,9 @@ use App\Item;
 
 class TopController extends Controller
 {
+    public function __construct()
+    {
+    }
     /**
      * Show the application dashboard.
      *
