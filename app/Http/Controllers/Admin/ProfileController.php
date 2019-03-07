@@ -14,6 +14,9 @@ class ProfileController extends Controller
     {
     	$id = Auth::id();
     	$profiles = Profile::find($id);
+        if(empty($profiles)){
+            $profiles = new Profile;
+        }
         return view('admin.profile.profile', ['profiles' => $profiles]);
     }
 

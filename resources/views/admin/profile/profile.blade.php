@@ -20,17 +20,13 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">名前</label>
                               <div class="col-md-6">
-@if (empty($profiles))
-                              <input type="text" class="form-control" name="name" value="{{ old('name') }}">
-@else
                               <input type="text" class="form-control" name="name" value="{{ old('name',$profiles->name) }}">
-@endif
                           </div>
                       </div>
                           <div class="form-group row">
                               <label class="col-md-2" for="introduction">自己紹介欄</label>
                               <div class="col-md-9">
-                                <textarea class="form-control" name="introduction" rows="8">@if (empty($profiles)){{ old('introduction') }}@else{{ old('introduction',$profiles->introduction) }}@endif</textarea>
+                                <textarea class="form-control" name="introduction" rows="8">{{ old('introduction',$profiles->introduction) }}</textarea>
                               </div>
                          </div>
                          <div class="form-group row">
@@ -40,23 +36,12 @@
 <label class="verify_person__formbox__item_profile-img-upload" id="photo_frame1">
 <input type="file" accept="image/*" class="fileData">
 <div id="description1">
-			@if (old('image'))
-@if (empty($profiles))
-                <img src="{{ old('image') }}" id="image_thum" width="150">
-                <input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
-@else
+			@if (old('image') || !empty($profiles->image))
                 <img src="{{ old('image',$profiles->image) }}" id="image_thum" width="150">
                 <input type="hidden" name="image" id="image_src" value="{{ old('image',$profiles->image) }}">
-@endif
             @else
-
-@if (empty($profiles))
                 <img src="/img/noimg.png" id="image_thum" width="150">
                 <input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
-@else
-                <img src="{{ $profiles->image }}" id="image_thum" width="150">
-                <input type="hidden" name="image" id="image_src" value="{{ old('image',$profiles->image) }}">
-@endif
 			@endif
 </div>
 </label>
