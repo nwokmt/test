@@ -48,23 +48,12 @@
 <label class="verify_person__formbox__item_profile-img-upload" id="photo_frame1">
 <input type="file" accept="image/*" class="fileData">
 <div id="description1">
-			@if (old('image'))
-@if (empty($item))
-                <img src="{{ old('image') }}" id="image_thum" width="150">
-                <input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
-@else
+			@if (old('image') || !empty($profiles->image))
                 <img src="{{ old('image',$item->image) }}" id="image_thum" width="150">
                 <input type="hidden" name="image" id="image_src" value="{{ old('image',$item->image) }}">
-@endif
             @else
-
-@if (empty($item))
                 <img src="/img/noimg.png" id="image_thum" width="150">
                 <input type="hidden" name="image" id="image_src" value="{{ old('image') }}">
-@else
-                <img src="{{ $item->image }}" id="image_thum" width="150">
-                <input type="hidden" name="image" id="image_src" value="{{ old('image',$item->image) }}">
-@endif
 			@endif
 </div>
 </label>
