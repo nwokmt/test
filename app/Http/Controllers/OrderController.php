@@ -25,7 +25,7 @@ class OrderController extends Controller
             $cart = array();
         }
         $cart[] = $item;
-        session(['cart' => $cart])
+        session(['cart' => $cart]);
         return redirect('cart');
     }
 
