@@ -16,7 +16,9 @@ Route::get('/', 'TopController@index')->name('top');
 //商品詳細
 Route::get('/detail/{id}', 'OrderController@detail')->where(['id'=>'[0-9]+']);
 //商品追加
-Route::get('/add/{id}', 'OrderController@add')->name('add')->where(['id'=>'[0-9]+']);
+Route::get('/add/{id}', 'OrderController@add')->where(['id'=>'[0-9]+']);
+//商品削除
+Route::get('/remove/{id}', 'OrderController@remove')->where(['id'=>'[0-9]+']);
 //カート
 Route::get('/cart', 'OrderController@cart')->name('cart');
 

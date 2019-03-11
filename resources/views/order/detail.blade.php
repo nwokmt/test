@@ -22,7 +22,7 @@
 		  <p>{{ ($item->description) }}</p>
 		</div>
 	          <div class="row justify-content-center">
-                  <a class="btn btn-warning" href="/admin/item/edit/{{ ($item->id) }}">編集する
+                  <a class="btn btn-warning" href="/add/{{ ($item->id) }}">カートに追加する
                   </a>
                   </div>      
             </div>

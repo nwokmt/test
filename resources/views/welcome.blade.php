@@ -103,6 +103,7 @@
 <div class="container">
                              @foreach($items as $item)
 <div class="item">
+<a href="/detail/{{ $item->id }}">
 <p>
 @if(empty($item->image))
                                 <img src="/img/noimg.png" id="image_thum" width="150">
@@ -113,6 +114,7 @@
                                     <div>{{ ($item->name) }}</div>
                                     <div>{{ ($item->price) }}円</div>
                                     <div style="text-align:left">{{ ($item->description)}}</div>
+</a>
 </div><!-- item -->
                              @endforeach
 </div><!-- container -->

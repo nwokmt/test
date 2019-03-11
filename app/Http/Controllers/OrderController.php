@@ -27,10 +27,25 @@ class OrderController extends Controller
         return redirect('cart');
     }
 
+    public function remove($id)
+    {
+        $cart = session('cart');
+        if(!empty($cart)){
+            unset($cart[$id]);
+            $cart = array_values($cart);
+            session(['cart' => $cart]);
+        }
+        return redirect('cart');
+    }
+
     public function cart()
     {
-print_r(session('cart'));
-exit;
+        return view('order.list', ['items' => session('cart')]);
+    }
+
+    public function order()
+    {
+        return view('order.form', ['items' => session('cart')]);
     }
 
     public function save(Request $request)
