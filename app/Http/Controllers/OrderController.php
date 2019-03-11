@@ -11,13 +11,13 @@ use Illuminate\Support\facades\Auth;
 class OrderController extends Controller
 {
 
-    public function detail()
+    public function detail($id)
     {
-        $item = new Item;
-        return view('admin.item.form', ['item' => $item]);
+    	$item = Item::find($id);
+        return view('order.detail', ['item' => $item]);
     }
 
-    public function add(Request $request)
+    public function add($id)
     {
     	$item = Item::find($id);
         $cart = session('cart');
