@@ -58,10 +58,4 @@ exit;
         return view('cart.list', ['orders' => $orders]);
      }
 
-    public function detail($id)
-   {
-	$item = Item::find($id);
-	return view('admin.item.detail', ['item' => $item]);
-
-     }
 }
