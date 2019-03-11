@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
-use App\User;
-use Illuminate\Support\facades\Auth;
 
 class OrderController extends Controller
 {
