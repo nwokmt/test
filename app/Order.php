@@ -13,5 +13,9 @@ class Order extends Model
         'name' => 'required',
         'payment' => 'required',
     );
+    public function details()
+    {
+        return $this->hasMany('App\Orderdetail');
+    }
 }
 
