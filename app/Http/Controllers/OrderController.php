@@ -61,7 +61,7 @@ class OrderController extends Controller
     }
 
     //注文確認
-    public function confirm()
+    public function confirm(Request $request)
     {
         //バリデーションチェック
         $this->validate($request, Order::$rules);
