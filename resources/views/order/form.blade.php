@@ -20,29 +20,29 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">名前</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                              <input type="text" required class="form-control" name="name" value="{{ old('name') }}">
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">郵便番号</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="postalcode" value="{{ old('postalcode') }}">
+                              <input type="text" class="form-control" pattern="\d{3}-?\d{4}" name="postalcode" value="{{ old('postalcode') }}">
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">住所</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="address" value="{{ old('address') }}">
+                              <input type="text" required class="form-control" name="address" value="{{ old('address') }}">
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">支払い方法</label>
                               <div class="col-md-6">
-                                <select name="payment">
+                                <select name="payment" required class="form-control">
                                 <option>選択してください</option>
-                                <option value="銀行振込" @if(old('payment')=="銀行振込")selected@endif>銀行振込</option>
-                                <option value="着払い" @if(old('payment')=="着払い")selected@endif>着払い</option>
-                                <option value="コンビニ払い" @if(old('payment')=="コンビニ払い")selected@endif>コンビニ払い</option>
+                                <option value="銀行振込" @if(old('payment')=="銀行振込") selected @endif>銀行振込</option>
+                                <option value="着払い" @if(old('payment')=="着払い") selected @endif>着払い</option>
+                                <option value="コンビニ払い" @if(old('payment')=="コンビニ払い") selected @endif>コンビニ払い</option>
                                 </select>
                           </div>
                       </div>
