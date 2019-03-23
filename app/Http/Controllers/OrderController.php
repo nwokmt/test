@@ -90,7 +90,6 @@ class OrderController extends Controller
         if(empty($cart) || empty($form)){
             return redirect('cart');
         }
-        $this->validate($form, Order::$rules);
         $order = new Order;
         unset($form['_token']);
 
