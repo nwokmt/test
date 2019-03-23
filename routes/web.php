@@ -30,6 +30,7 @@ Route::get('/order/thanks', 'OrderController@thanks')->name('thanks');
 Route::get('/ordermade', 'OrdermadeController@order');
 Route::post('/ordermade/confirm', 'OrdermadeController@confirm');
 Route::get('/ordermade/save', 'OrdermadeController@save');
+//thanks‰æ–Ê‚Íorder‚Æ“¯‚¶‚à‚Ì‚ğg‚¤
 
 
 //ŠÇ—‰æ–Ê
