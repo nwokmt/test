@@ -73,8 +73,8 @@ class OrderController extends Controller
             return redirect('cart');
         }
         $form = $request->all();
-print_r($form);
-exit;
+        $order = new Order;
+        $order->fill($form);
         //ƒZƒbƒVƒ‡ƒ“‚É“o˜^
         session(['order' => $form]);
         return view('order.confirm', ['items' => session('cart'),'order' => $form]);
