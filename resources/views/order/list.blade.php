@@ -8,6 +8,9 @@
         <div class="row">
             <div class="col-md-12 mx-auto">
                 <div class="row">
+@if(empty($items))
+<center>カートの中に商品が入っていません。</center>
+@else
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -47,6 +50,7 @@
                              @endforeach
                         </tbody>
                     </table>
+@endif
                 </div>
             </div>
         </div>
