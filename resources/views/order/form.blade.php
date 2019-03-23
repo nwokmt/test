@@ -38,7 +38,7 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">支払い方法</label>
                               <div class="col-md-6">
-                              {{Form::select('payment', ['銀行振込', '着払い', 'コンビニ払い',old('payment')])}}
+                              {!!Form::select('payment', ['銀行振込', '着払い', 'コンビニ払い'],old('payment'), ['placeholder' => '選択してください'])!!}
                           </div>
                       </div>
 

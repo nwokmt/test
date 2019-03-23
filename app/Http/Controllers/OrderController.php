@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
+use App\Order;
 
 class OrderController extends Controller
 {
@@ -50,13 +51,29 @@ class OrderController extends Controller
     //注文入力
     public function order()
     {
+        //カートの中身を確認
+        $cart = session('cart');
+        //カートの中身が無い場合はカートに移動（無いことを確認させるため）
+        if(empty($cart)){
+            return redirect('cart');
+        }
         return view('order.form', ['items' => session('cart')]);
     }
 
     //注文確認
     public function confirm()
     {
-        return view('order.confirm', ['items' => session('cart')]);
+        //バリデーションチェック
+        $this->validate($request, Order::$rules);
+        //カートの中身を確認
+        $cart = session('cart');
+        //カートの中身が無い場合はカートに移動（無いことを確認させるため）
+        if(empty($cart)){
+            return redirect('cart');
+        }
+        //セッションに登録
+        session(['order' => $request]);
+        return view('order.confirm', ['items' => session('cart'),'order' => $request]);
     }
 
     //注文確定
