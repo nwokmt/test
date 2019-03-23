@@ -20,25 +20,25 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">名前</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="name" value="{{ old('name',$orders->name) }}">
+                              <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">郵便番号</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="postalcode" value="{{ old('name',$orders->postalcode) }}">
+                              <input type="text" class="form-control" name="postalcode" value="{{ old('name') }}">
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">住所</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="address" value="{{ old('name',$orders->address) }}">
+                              <input type="text" class="form-control" name="address" value="{{ old('name') }}">
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">支払い方法</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="address" value="{{ old('name',$orders->address) }}">
+                              <input type="text" class="form-control" name="address" value="{{ old('name') }}">
                           </div>
                       </div>
 
