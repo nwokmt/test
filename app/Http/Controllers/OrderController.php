@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
 use App\Order;
+use App\Orderdetail;
 
 class OrderController extends Controller
 {
@@ -71,28 +72,40 @@ class OrderController extends Controller
         if(empty($cart)){
             return redirect('cart');
         }
+        $form = $request->all();
         //セッションに登録
-        session(['order' => $request]);
-        return view('order.confirm', ['items' => session('cart'),'order' => $request]);
+        session(['order' => $form]);
+        return view('order.confirm', ['items' => session('cart'),'order' => $form]);
     }
 
     //注文確定
     public function save()
     {
-print_r(session('order'));
-exit;
-        $this->validate($request, Item::$rules);
-        $item = new Item;
-        $form = $request->all();
+        //カートの中身を確認
+        $cart = session('cart');
+        $form = session('order');
+        //カートの中身が無いまたは注文内容が場合はカートに移動（無いことを確認させるため）
+        if(empty($cart) || empty($form)){
+            return redirect('cart');
+        }
+        $this->validate($form, Order::$rules);
+        $order = new Order;
         unset($form['_token']);
 
-        if(isset($form["id"]) && !empty($form["id"])){
-            $item = Item::firstOrNew(['id' => $form["id"]]);
+        $order->fill($form);
+        $order->save();
+        $order_id = $order->id;
+        //詳細を登録
+        foreach($cart as $v){
+            $orderdetail = new Orderdetail;
+            $orderdetail->order_id = $order_id;
+            $orderdetail->item_id = $v->id;
+            $orderdetail->save();
         }
-        $item->fill($form);
-        $item->save();
-        
-        return redirect('admin/item');
+        //登録後セッションから削除
+        session(['cart' => null]);
+        session(['order' => null]);
+        return redirect('thanks');
     }
 
     public function thanks()

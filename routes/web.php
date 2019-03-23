@@ -25,12 +25,11 @@ Route::get('/cart', 'OrderController@cart')->name('cart');
 Route::get('/order', 'OrderController@order');
 Route::post('/order/confirm', 'OrderController@confirm');
 Route::get('/order/save', 'OrderController@save');
-Route::get('/order/thanks', 'OrderController@thanks');
+Route::get('/order/thanks', 'OrderController@thanks')->name('thanks');
 //オーダーメイド注文
 Route::get('/ordermade', 'OrdermadeController@order');
 Route::post('/ordermade/confirm', 'OrdermadeController@confirm');
 Route::get('/ordermade/save', 'OrdermadeController@save');
-Route::get('/ordermade/thanks', 'OrdermadeController@thanks');
 
 
 //管理画面
