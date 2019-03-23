@@ -77,7 +77,7 @@ class OrderController extends Controller
     }
 
     //íçï∂ämíË
-    public function save(Request $request)
+    public function save()
     {
 print_r(session('order'));
 exit;
@@ -94,6 +94,11 @@ exit;
         
         return redirect('admin/item');
     }
+
+    public function thanks()
+   {
+        return view('order.thanks');
+     }
 
     public function list()
    {
