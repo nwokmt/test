@@ -23,6 +23,12 @@ Route::get('/remove/{id}', 'OrderController@remove')->where(['id'=>'[0-9]+']);
 Route::get('/cart', 'OrderController@cart')->name('cart');
 //注文
 Route::get('/order', 'OrderController@order');
+Route::post('/order/confirm', 'OrderController@confirm');
+Route::get('/order/thanks', 'OrderController@thanks');
+//オーダーメイド注文
+Route::get('/ordermade', 'OrdermadeController@order');
+Route::post('/ordermade/confirm', 'OrdermadeController@confirm');
+Route::get('/ordermade/thanks', 'OrdermadeController@thanks');
 
 
 //管理画面
