@@ -25,7 +25,7 @@ Route::get('/cart', 'OrderController@cart')->name('cart');
 Route::get('/order', 'OrderController@order');
 Route::post('/order/confirm', 'OrderController@confirm');
 Route::post('/order/save', 'OrderController@save');
-Route::get('/order/thanks', 'OrderController@thanks')->name('thanks');
+Route::get('/thanks', 'OrderController@thanks')->name('thanks');
 //オーダーメイド注文
 Route::get('/ordermade', 'OrdermadeController@order');
 Route::post('/ordermade/confirm', 'OrdermadeController@confirm');
@@ -54,7 +54,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('item/save', ['as' => 'save', 'uses' => 'Admin\ItemController@save'])->middleware('auth');
 
     //注文一覧
-    Route::get('order/list', ['as' => 'list', 'uses' => 'Admin\OrderController@list'])->middleware('auth');
+    Route::get('order', 'Admin\OrderController@list')->middleware('auth');
     //注文詳細
     Route::get('order/detail/{id}', ['as' => 'detail', 'uses' => 'Admin\OrderController@detail'])->where(['id'=>'[0-9]+'])->middleware('auth');
     //オーダーメイド注文一覧
