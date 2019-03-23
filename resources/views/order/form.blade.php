@@ -40,9 +40,9 @@
                               <div class="col-md-6">
                                 <select name="payment">
                                 <option>選択してください</option>
-                                <option value="銀行振込" @if(old('payment')=="銀行振込"){{selected}}@endif>銀行振込</option>
-                                <option value="着払い" @if(old('payment')=="着払い"){{selected}}@endif>着払い</option>
-                                <option value="コンビニ払い" @if(old('payment')=="コンビニ払い"){{selected}}@endif>コンビニ払い</option>
+                                <option value="銀行振込" @if(old('payment')=="銀行振込")selected@endif>銀行振込</option>
+                                <option value="着払い" @if(old('payment')=="着払い")selected@endif>着払い</option>
+                                <option value="コンビニ払い" @if(old('payment')=="コンビニ払い")selected@endif>コンビニ払い</option>
                                 </select>
                           </div>
                       </div>

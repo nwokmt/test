@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>注文内容</h1>
-                <form action="{{ action('OrderController@confirm') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('OrderController@save') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>
@@ -47,14 +47,13 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th colspan="5">注文商品</th>
+                                <th colspan="4">注文商品</th>
                             </tr>
                             <tr>
                                 <th width="20%">画像</th>
                                 <th width="20%">商品名</th>
                                 <th width="10%">金額</th>
-                                <th width="40%">説明</th>
-                                <th width="10%"></th>
+                                <th width="50%">説明</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,11 +69,6 @@
                                     <td>{{ ($item->name) }}</td>
                                     <td>{{ ($item->price) }}円</td>
                                     <td>{{ ($item->description) }}</td>
-				    <td align="center">
- 					<a class="btn btn-primary" href="{{ action('OrderController@detail', ['id' => $item->id]) }}">詳細</a><br><br>
- 					<a class="btn btn-primary" href="{{ action('OrderController@remove', ['id' => $key]) }}">削除</a>
-                                        
-                                    </td>
                                 </tr>
                              @endforeach
                         </tbody>
@@ -84,7 +78,7 @@
                          </div>
                          {{ csrf_field() }}
                          <div class="row justify-content-center">
-                         <input type="submit" class="btn btn-warning" value="注文内容確認">
+                         <input type="submit" class="btn btn-warning" value="この内容で注文">
                          </div>
                     </div>
                     </div>

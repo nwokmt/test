@@ -79,6 +79,8 @@ class OrderController extends Controller
     //’•¶Šm’è
     public function save(Request $request)
     {
+print_r(session('order'));
+exit;
         $this->validate($request, Item::$rules);
         $item = new Item;
         $form = $request->all();
