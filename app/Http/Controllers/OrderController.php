@@ -77,7 +77,7 @@ class OrderController extends Controller
         $order->fill($form);
         //セッションに登録
         session(['order' => $form]);
-        return view('order.confirm', ['items' => session('cart'),'order' => $form]);
+        return view('order.confirm', ['items' => session('cart'),'order' => $order]);
     }
 
     //注文確定

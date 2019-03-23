@@ -48,8 +48,20 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('item/add', ['as' => 'add', 'uses' => 'Admin\ItemController@add'])->middleware('auth');
     //商品編集
     Route::get('item/edit/{id}', ['as' => 'edit', 'uses' => 'Admin\ItemController@edit'])->where(['id'=>'[0-9]+'])->middleware('auth');
+    //商品削除
+    Route::get('item/delete/{id}', ['as' => 'edit', 'uses' => 'Admin\ItemController@delete'])->where(['id'=>'[0-9]+'])->middleware('auth');
     //商品保存
     Route::post('item/save', ['as' => 'save', 'uses' => 'Admin\ItemController@save'])->middleware('auth');
+
+    //注文一覧
+    Route::get('order/list', ['as' => 'list', 'uses' => 'Admin\OrderController@list'])->middleware('auth');
+    //注文詳細
+    Route::get('order/detail/{id}', ['as' => 'detail', 'uses' => 'Admin\OrderController@detail'])->where(['id'=>'[0-9]+'])->middleware('auth');
+    //オーダーメイド注文一覧
+    Route::get('ordermade/list', ['as' => 'list', 'uses' => 'Admin\OrdermadeController@list'])->middleware('auth');
+    //オーダーメイド注文詳細
+    Route::get('ordermade/detail/{id}', ['as' => 'detail', 'uses' => 'Admin\OrdermadeController@detail'])->where(['id'=>'[0-9]+'])->middleware('auth');
+
 });
 //管理者ログイン後ホーム
 Auth::routes();
