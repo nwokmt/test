@@ -81,7 +81,7 @@ class OrderController extends Controller
     }
 
     //注文確定
-    public function save()
+    public function save(Request $request)
     {
         //カートの中身を確認
         $cart = session('cart');
