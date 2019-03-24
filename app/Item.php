@@ -13,6 +13,9 @@ class Item extends Model
         'price' => 'required',
     );
 
-
+    public function orders()
+    {
+        return $this->belongsToMany('App\Order', 'orderdetails', 'order_id', 'item_id');
+    }
 }
 
