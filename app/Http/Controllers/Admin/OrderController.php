@@ -22,7 +22,7 @@ class OrderController extends Controller
                     ->orderBy('orders.updated_at',"desc")
                     ->get();
 */
-        $orders = Order->orderBy('orders.updated_at',"desc")->get();
+        $orders = Order::orderBy('orders.updated_at',"desc")->get();
 print_r($orders);
 print_r($orders->details);
 exit;
