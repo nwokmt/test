@@ -23,6 +23,12 @@ class ItemController extends Controller
         return view('admin.item.form', ['item' => $item]);
     }
 
+    public function delete($id)
+    {
+    	Item::where('id','=',$id)->delete();
+        return redirect('item');
+    }
+
     public function save(Request $request)
     {
         $this->validate($request, Item::$rules);

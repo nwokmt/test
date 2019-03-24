@@ -49,7 +49,7 @@ Route::group(['prefix' => 'admin'], function() {
     //商品編集
     Route::get('item/edit/{id}', ['as' => 'edit', 'uses' => 'Admin\ItemController@edit'])->where(['id'=>'[0-9]+'])->middleware('auth');
     //商品削除
-    Route::get('item/delete/{id}', ['as' => 'edit', 'uses' => 'Admin\ItemController@delete'])->where(['id'=>'[0-9]+'])->middleware('auth');
+    Route::get('item/delete/{id}', ['as' => 'delete', 'uses' => 'Admin\ItemController@delete'])->where(['id'=>'[0-9]+'])->middleware('auth');
     //商品保存
     Route::post('item/save', ['as' => 'save', 'uses' => 'Admin\ItemController@save'])->middleware('auth');
 
