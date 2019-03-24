@@ -1,6 +1,6 @@
 <?php
 return array(
-    //‘——¿
+    //é€æ–™
     'postage'=> '700', 
 );
 ?>
