@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $guarded = array('id');
+    protected $primaryKey = "id";
 
     public static $rules =array(
         'address' => 'required',

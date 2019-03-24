@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     protected $guarded = array('id');
+    protected $primaryKey = "id";
 
     public static $rules =array(
         'name' => 'required',

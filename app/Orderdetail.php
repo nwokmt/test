@@ -12,5 +12,10 @@ class Orderdetail extends Model
         'order_id' => 'required',
         'item_id' => 'required',
     );
+
+    public function items()
+    {
+        return $this->hasOne('App\Item');
+    }
 }
 
