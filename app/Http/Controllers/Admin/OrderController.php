@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Item;
 use App\User;
 use App\Order;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\facades\Auth;
 
 class OrderController extends Controller
