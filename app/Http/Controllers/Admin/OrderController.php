@@ -13,7 +13,7 @@ class OrderController extends Controller
 {
     public function list()
    {
-        $orders = Order::orderBy('updated_at',"desc")->get();
+        $orders = Order::items()->orderBy('updated_at',"desc")->get();
 print_r($orders);
 exit;
         return view('admin.order.list', ['orders' => $orders]);
