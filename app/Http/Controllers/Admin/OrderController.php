@@ -21,7 +21,7 @@ class OrderController extends Controller
 
     public function detail($id)
    {
-	$orderdetail = Orderdetail:::where('order_id',$id)->orderBy('id',"asc")->get();
+	$orderdetail = Orderdetail::where('order_id',$id)->orderBy('id',"asc")->get();
 print_r($orderdetail);
 exit;
 	return view('admin.item.detail', ['item' => $item]);
