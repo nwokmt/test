@@ -41,6 +41,13 @@
                               {{ $order->payment }}
                           </div>
                       </div>
+                      <div class="form-group row">
+                          <label class="col-md-2" for="name">支払い金額</label>
+                              <div class="col-md-6">
+                              {{ $total }}円
+                          </div>
+                      </div>
+
 
 <!-- カート--->
 

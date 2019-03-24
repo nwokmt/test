@@ -1,18 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h1>注文内容</h1>
-                <form action="{{ action('OrderController@confirm') }}" method="post" enctype="multipart/form-data">
 
-                    @if (count($errors) > 0)
-                        <ul>
-                            @foreach($errors->all() as $e)
-                                <li>{{ $e }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
                     <div class="row justify-content-center">
                     <div class="col-lg-8">
                     <div class="card">
@@ -20,30 +12,34 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">名前</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="name" value="{{ old('name',$orders->name) }}">
+                              {{ $order->name }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">郵便番号</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="postalcode" value="{{ old('name',$orders->postalcode) }}">
+                              {{ $order->postalcode }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">住所</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="address" value="{{ old('name',$orders->address) }}">
+                              {{ $order->address }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">支払い方法</label>
                               <div class="col-md-6">
-                              <input type="text" class="form-control" name="address" value="{{ old('name',$orders->address) }}">
+                              {{ $order->address }}
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-md-2" for="name">支払い金額</label>
+                              <div class="col-md-6">
+                              {{ $total }}円
                           </div>
                       </div>
 
-<!-- カート--->
-<hr>
 
                     <table class="table table-hover">
                         <thead>
@@ -52,10 +48,9 @@
                             </tr>
                             <tr>
                                 <th width="20%">画像</th>
-                                <th width="20%">商品名</th>
+                                <th width="30%">商品名</th>
                                 <th width="10%">金額</th>
                                 <th width="40%">説明</th>
-                                <th width="10%"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,22 +66,16 @@
                                     <td>{{ ($item->name) }}</td>
                                     <td>{{ ($item->price) }}円</td>
                                     <td>{{ ($item->description) }}</td>
-				    <td align="center">
- 					<a class="btn btn-primary" href="{{ action('OrderController@detail', ['id' => $item->id]) }}">詳細</a><br><br>
- 					<a class="btn btn-primary" href="{{ action('OrderController@remove', ['id' => $key]) }}">削除</a>
-                                        
-                                    </td>
                                 </tr>
                              @endforeach
                         </tbody>
                     </table>
-<hr>
 
                              </div>
                          </div>
                          {{ csrf_field() }}
                          <div class="row justify-content-center">
-                         <input type="submit" class="btn btn-warning" value="注文内容確認">
+                         <input type="button" onclick="location.href='/admin/order'" class="btn btn-warning" value="一覧に戻る">
                          </div>
                     </div>
                     </div>

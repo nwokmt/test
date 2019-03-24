@@ -64,6 +64,7 @@ class OrderController extends Controller
     //注文確認
     public function confirm(Request $request)
     {
+        $total = 0;
         //バリデーションチェック
         $this->validate($request, Order::$rules);
         //カートの中身を確認
@@ -71,13 +72,17 @@ class OrderController extends Controller
         //カートの中身が無い場合はカートに移動（無いことを確認させるため）
         if(empty($cart)){
             return redirect('cart');
+        }else{
+            foreach($cart as $v){
+                $total = $total + $v->price;
+            }
         }
         $form = $request->all();
         $order = new Order;
         $order->fill($form);
         //セッションに登録
         session(['order' => $form]);
-        return view('order.confirm', ['items' => session('cart'),'order' => $order]);
+        return view('order.confirm', ['items' => $cart,'order' => $order,'total' => $total]);
     }
 
     //注文確定
