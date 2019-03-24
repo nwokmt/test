@@ -15,7 +15,7 @@ class Item extends Model
 
     public function orders()
     {
-        return $this->belongsToMany('App\Order', 'orderdetails', 'order_id', 'item_id');
+        return $this->belongsToMany('App\Order');
     }
 }
 

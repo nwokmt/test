@@ -20,7 +20,7 @@ class Order extends Model
 
     public function items()
     {
-        return $this->belongsToMany('App\Item', 'orderdetails', 'item_id', 'order_id');
+        return $this->belongsToMany('App\Item');
     }
 }
 
