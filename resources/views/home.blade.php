@@ -21,6 +21,9 @@
 <br>
                     <a href="/admin/item">[商品一覧]</a>
 
+<br>
+                    <a href="/admin/order">[注文一覧]</a>
+
                 </div>
             </div>
         </div>

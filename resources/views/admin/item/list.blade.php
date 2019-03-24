@@ -40,7 +40,7 @@
                                     <td>{{ ($item->description) }}</td>
 				    <td align="center">
  					<a class="btn btn-primary" href="{{ action('Admin\ItemController@detail', ['id' => $item->id]) }}">詳細</a><br><br>
- 					<a class="btn btn-primary" href="{{ action('Admin\ItemController@edit', ['id' => $item->id]) }}">編集</a><br>
+ 					<a class="btn btn-primary" href="{{ action('Admin\ItemController@edit', ['id' => $item->id]) }}">編集</a><br><br>
  					<a class="btn btn-primary" href="{{ action('Admin\ItemController@delete', ['id' => $item->id]) }}">削除</a>
                                         
                                     </td>

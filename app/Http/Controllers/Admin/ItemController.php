@@ -26,7 +26,7 @@ class ItemController extends Controller
     public function delete($id)
     {
     	Item::where('id','=',$id)->delete();
-        return redirect('item');
+        return redirect('admin/item');
     }
 
     public function save(Request $request)
