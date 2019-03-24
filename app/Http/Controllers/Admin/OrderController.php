@@ -29,10 +29,9 @@ class OrderController extends Controller
         foreach($orderdetail as $v){
             $item =  Item::where('id',$v->item_id)->get();
             $items[] = $item["0"];
-print_r($item["0"]->price);
             $total = $total + $item["0"]->price;
         }
-    	return view('admin.order.detail', ['order' => $order,'items' => $items,'total' => $total]);
+    	return view('admin.order.detail', ['order' => $order["0"],'items' => $items,'total' => $total]);
 
    }
 }
