@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
 <script src="/js/jquery-2.2.0.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/Jcrop.css"/>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->

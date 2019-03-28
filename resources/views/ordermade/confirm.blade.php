@@ -18,9 +18,21 @@
                     <div class="card">
                     <div class="card-body">
                       <div class="form-group row">
-                          <label class="col-md-2" for="name">名前</label>
+                          <label class="col-md-2" for="name">種類</label>
                               <div class="col-md-6">
                               {{ $order->name }}
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-md-2" for="name">素材</label>
+                              <div class="col-md-6">
+                              {{ $order->material }}
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-md-2" for="name">色</label>
+                              <div class="col-md-6">
+                              {{ $order->color }}
                           </div>
                       </div>
                       <div class="form-group row">
@@ -47,39 +59,6 @@
                               {{ $total+ Config::get('const.postage')}}円　(　商品合計:{{ $total }}円＋送料：{{Config::get('const.postage')}}円　)
                           </div>
                       </div>
-
-
-<!-- カート--->
-
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th colspan="4">注文商品</th>
-                            </tr>
-                            <tr>
-                                <th width="20%">画像</th>
-                                <th width="20%">商品名</th>
-                                <th width="10%">金額</th>
-                                <th width="50%">説明</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                             @foreach($items as $key=>$item)
-                                <tr>
-<td>
-@if(empty($item->image))
-                                <img src="/img/noimg.png" id="image_thum" width="150">
-@else
-                                  <img src="{{ $item->image }}" id="image_thum" width="150">
-@endif
-</td>
-                                    <td>{{ ($item->name) }}</td>
-                                    <td>{{ ($item->price) }}円</td>
-                                    <td>{{ ($item->description) }}</td>
-                                </tr>
-                             @endforeach
-                        </tbody>
-                    </table>
 
                              </div>
                          </div>

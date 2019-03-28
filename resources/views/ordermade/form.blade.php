@@ -26,18 +26,34 @@
                                 <option value="イヤリング" @if(old('type')=="イヤリング") selected @endif>イヤリング</option>
                                 <option value="指輪" @if(old('type')=="指輪") selected @endif>指輪</option>
                                 <option value="ブレスレット" @if(old('type')=="ブレスレット") selected @endif>ブレスレット</option>
+                                <option value="ネックレス" @if(old('type')=="ネックレス") selected @endif>ネックレス</option>
                                 </select>
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">素材</label>
                               <div class="col-md-6">
-                                <select name="type" required class="form-control">
+                                <select name="material" required class="form-control">
                                 <option>選択してください</option>
-                                <option value="パール" @if(old('type')=="パール") selected @endif>パール</option>
-                                <option value="ビーズ" @if(old('type')=="ビーズ") selected @endif>ビーズ</option>
-                                <option value="天然石" @if(old('type')=="天然石") selected @endif>天然石</option>
-                                <option value="ブレスレット" @if(old('type')=="ブレスレット") selected @endif>ブレスレット</option>
+                                <option value="パール" @if(old('material')=="パール") selected @endif>パール</option>
+                                <option value="ビーズ" @if(old('material')=="ビーズ") selected @endif>ビーズ</option>
+                                <option value="天然石" @if(old('material')=="天然石") selected @endif>天然石</option>
+                                <option value="ブレスレット" @if(old('material')=="ブレスレット") selected @endif>ブレスレット</option>
+                                </select>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                          <label class="col-md-2" for="name">色</label>
+                              <div class="col-md-6">
+                                <select name="color" required class="form-control">
+                                <option>選択してください</option>
+                                <option value="赤" @if(old('color')=="赤") selected @endif>赤</option>
+                                <option value="青" @if(old('color')=="青") selected @endif>青</option>
+                                <option value="緑" @if(old('color')=="緑") selected @endif>緑</option>
+                                <option value="黄" @if(old('color')=="黄") selected @endif>黄</option>
+                                <option value="透明" @if(old('color')=="透明") selected @endif>透明</option>
+                                <option value="黒" @if(old('color')=="黒") selected @endif>黒</option>
+                                <option value="白" @if(old('color')=="白") selected @endif>白</option>
                                 </select>
                           </div>
                       </div>
