@@ -10,7 +10,7 @@ use App\Ordermade;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\facades\Auth;
 
-class OrderController extends Controller
+class OrdermadeController extends Controller
 {
     public function list()
    {

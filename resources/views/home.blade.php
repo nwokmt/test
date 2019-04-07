@@ -23,6 +23,8 @@
 
 <br>
                     <a href="/admin/order">[注文一覧]</a>
+<br>
+                    <a href="/admin/ordermade">[オーダーメイド注文一覧]</a>
 
                 </div>
             </div>

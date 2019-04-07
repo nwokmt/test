@@ -120,11 +120,11 @@
                              @endforeach
 
 
+</div><!-- container -->
                 <div class="row">
-                欲しいものが見つからない場合はこちら→<a href="/ordermade">[オーダーメイド]</a>
+                ☆欲しいものが見つからない場合はこちら→<a href="/ordermade">[オーダーメイド]</a>
                 </div>
 
-</div><!-- container -->
                 </div>
             </div>
         </div>
