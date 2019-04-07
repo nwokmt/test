@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>注文内容</h1>
-                <form action="{{ action('OrderController@save') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('OrdermadeController@save') }}" method="post" enctype="multipart/form-data">
 
                     @if (count($errors) > 0)
                         <ul>
