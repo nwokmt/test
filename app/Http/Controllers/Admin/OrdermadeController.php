@@ -9,6 +9,7 @@ use App\User;
 use App\Ordermade;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\facades\Auth;
+use Illuminate\Support\Facades\Config;
 
 class OrdermadeController extends Controller
 {
