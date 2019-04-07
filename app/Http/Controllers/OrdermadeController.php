@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
 use App\Ordermade;
+use Illuminate\Support\Facades\Config;
 
 class OrdermadeController extends Controller
 {
