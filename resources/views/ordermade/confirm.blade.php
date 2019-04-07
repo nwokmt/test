@@ -20,37 +20,37 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">種類</label>
                               <div class="col-md-6">
-                              {{ $order->type }}
+                              {{ $ordermade->type }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">素材</label>
                               <div class="col-md-6">
-                              {{ $order->material }}
+                              {{ $ordermade->material }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">色</label>
                               <div class="col-md-6">
-                              {{ $order->color }}
+                              {{ $ordermade->color }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">郵便番号</label>
                               <div class="col-md-6">
-                              {{ $order->postalcode }}
+                              {{ $ordermade->postalcode }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">住所</label>
                               <div class="col-md-6">
-                              {{ $order->address }}
+                              {{ $ordermade->address }}
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="name">支払い方法</label>
                               <div class="col-md-6">
-                              {{ $order->payment }}
+                              {{ $ordermade->payment }}
                           </div>
                       </div>
                       <div class="form-group row">
