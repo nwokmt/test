@@ -20,7 +20,7 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">種類</label>
                               <div class="col-md-6">
-                              {{ $order->name }}
+                              {{ $order->type }}
                           </div>
                       </div>
                       <div class="form-group row">
@@ -56,7 +56,7 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="name">支払い金額</label>
                               <div class="col-md-6">
-                              {{ $total+ Config::get('const.postage')}}円　(　商品合計:{{ $total }}円＋送料：{{Config::get('const.postage')}}円　)
+                              {{ $orderMadePrice + Config::get('const.postage')}}円　(　商品金額:{{ $orderMadePrice }}円＋送料：{{Config::get('const.postage')}}円　)
                           </div>
                       </div>
 

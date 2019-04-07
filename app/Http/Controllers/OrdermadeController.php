@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Item;
-use App\Order;
-use App\Orderdetail;
+use App\Ordermade;
 
 class OrdermadeController extends Controller
 {
@@ -22,23 +21,15 @@ class OrdermadeController extends Controller
     {
         $total = 0;
         //バリデーションチェック
-        $this->validate($request, Order::$rules);
-        //カートの中身を確認
-        $cart = session('cart');
-        //カートの中身が無い場合はカートに移動（無いことを確認させるため）
-        if(empty($cart)){
-            return redirect('cart');
-        }else{
-            foreach($cart as $v){
-                $total = $total + $v->price;
-            }
-        }
+        $this->validate($request, Ordermade::$rules);
         $form = $request->all();
-        $order = new Order;
+        $order = new Ordermade;
         $order->fill($form);
         //セッションに登録
         session(['order' => $form]);
-        return view('order.confirm', ['items' => $cart,'order' => $order,'total' => $total]);
+        //料金
+        $orderMadePrice = Config::get('const.orderMadePrice');
+        return view('order.confirm', ['order' => $order,'orderMadePrice' => $orderMadePrice[$form["type"]]]);
     }
 
     //注文確定
