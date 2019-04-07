@@ -97,10 +97,6 @@
                 </div>
                 </div>
 
-                <div class="row">
-                欲しいものが見つからない場合はこちら→<a href="/ordermade">[オーダーメイド]</a>
-                </div>
-
 
         <div class="row" style="margin-top:300px;">
             <div class="col-md-12 mx-auto">
@@ -122,11 +118,19 @@
 </a>
 </div><!-- item -->
                              @endforeach
+
+
+                <div class="row">
+                欲しいものが見つからない場合はこちら→<a href="/ordermade">[オーダーメイド]</a>
+                </div>
+
 </div><!-- container -->
                 </div>
             </div>
         </div>
     </div>
+
+
 
             </div>
         </div>
